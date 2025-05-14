@@ -110,8 +110,10 @@ public final strictfp class LoginForm extends Form implements RegisterProgressFo
 		group_buttons.place(ORIGIN_BOTTOM_RIGHT);
 
 		compileCanvas();
-
-		if (Renderer.isRegistered()) {
+		
+		main_menu.setMenu(this);
+		
+		/*if (Renderer.isRegistered()) {
 			if (Renderer.getRegistrationClient().getRegistrationInfo() != null) {
 				main_menu.setMenu(this);
 			} else {
@@ -123,7 +125,7 @@ public final strictfp class LoginForm extends Form implements RegisterProgressFo
 			Form form = new MatchmakingConnectingForm(network, gui_root, null, main_menu, null, null);
 			main_menu.setMenu(form);
 			form.centerPos();
-		}
+		}*/
 	}
 
 	public final void registrationFailed() {

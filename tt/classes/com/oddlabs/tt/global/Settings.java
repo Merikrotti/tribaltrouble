@@ -29,10 +29,10 @@ public final strictfp class Settings implements Serializable {
 	public boolean crashed = false;
 
 	// network
-	public String registration_address = "registration.oddlabs.com";
-	public String matchmaking_address = "matchmaking.oddlabs.com";
-	public String bugreport_address = "bugreport.oddlabs.com";
-	public String router_address = "router.oddlabs.com";
+	public String registration_address = "registration." + Globals.DOMAIN_NAME + ".com";
+	public String matchmaking_address = "matchmaking." + Globals.DOMAIN_NAME + ".com";
+	public String bugreport_address = "bugreport." + Globals.DOMAIN_NAME + ".com";
+	public String router_address = "router." + Globals.DOMAIN_NAME + ".com";
 	public String username = "";
 	public String pw_digest = "";
 	public boolean remember_login = false;

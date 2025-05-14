@@ -43,6 +43,7 @@ public strictfp class RegistrationClient {
 		this.registration_file = registration_file;
 		this.parameters = parameters;
 		this.client_type = client_type;
+		this.potential_key = "NotNull";
 
 		loadRegistrationFileDeterministic();
 	}

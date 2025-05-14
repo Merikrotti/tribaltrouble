@@ -542,7 +542,7 @@ e.printStackTrace();
 			String adapter_version = Display.getVersion();
 
 			try {
-				String url = "http://oddlabs.com/driversupport.php?"
+				String url = "http://" + Globals.DOMAIN_NAME +"/driversupport.php?"
 					+ "uid=" + URLEncoder.encode(uid, "UTF-8")
 					+ "&raw_os=" + URLEncoder.encode(os_name, "UTF-8")
 					+ "&os_version=" + URLEncoder.encode(os_version, "UTF-8")
