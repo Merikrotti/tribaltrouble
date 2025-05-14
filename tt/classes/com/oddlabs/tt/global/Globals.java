@@ -3,7 +3,7 @@ package com.oddlabs.tt.global;
 import org.lwjgl.opengl.*;
 
 public final strictfp class Globals {
-	public final static String DOMAIN_NAME = "http://domain.local";
+	public final static String DOMAIN_NAME = "domain.local";
 	public final static String SUPPORT_ADDRESS = "http://"+ DOMAIN_NAME +"/support";
 
 	public final static int BOUNDING_NONE = 0;
