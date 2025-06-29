@@ -34,8 +34,6 @@ import com.oddlabs.util.DBUtils;
 public final strictfp class DBInterface {
 	
 	public final static String getRegKeyUsername(String reg_key) throws IllegalArgumentException {
-		return "username";
-		/*
 		try {
 			PreparedStatement stmt = DBUtils.createStatement("SELECT username FROM registrations R WHERE R.reg_key = ? AND NOT R.disabled AND NOT R.banned");
 			try {
@@ -53,12 +51,10 @@ public final strictfp class DBInterface {
 		} catch (SQLException e) {
 			MatchmakingServer.getLogger().throwing(DBInterface.class.getName(), "getRegKeyUsername", e);
 			throw new IllegalArgumentException("key " + reg_key + " not i DB");
-		}*/
+		}
 	}
 	
 	public final static boolean usernameExists(String username) {
-		return false;
-		/*
 		try {
 			PreparedStatement stmt = DBUtils.createStatement("SELECT username FROM registrations R WHERE lower(R.username) = lower(?)");
 			try {
@@ -77,11 +73,9 @@ public final strictfp class DBInterface {
 			MatchmakingServer.getLogger().throwing(DBInterface.class.getName(), "queryUser", e);
 			throw new RuntimeException(e);
 		}
-		*/
 	}
 
 	public final static void createUser(Login login, LoginDetails login_details, String reg_key) {
-		/*
 		try {
 			PreparedStatement stmt = DBUtils.createStatement("UPDATE registrations R SET username = ?, email = ?, password = ? WHERE R.reg_key = ? AND R.username IS NULL AND R.password IS NULL AND R.email IS NULL");
 			try {
@@ -97,12 +91,10 @@ public final strictfp class DBInterface {
 		} catch (SQLException e) {
 			MatchmakingServer.getLogger().throwing(DBInterface.class.getName(), "createUser", e);
 			throw new RuntimeException(e);
-		}*/
+		}
 	}
 
 	public final static boolean queryUser(String username, String password) {
-		return false;
-		/*
 		try {
 			PreparedStatement stmt = DBUtils.createStatement("SELECT username, password FROM registrations R WHERE lower(R.username) = lower(?) AND R.password = ? AND NOT R.disabled AND NOT R.banned");
 			try {
@@ -121,12 +113,10 @@ public final strictfp class DBInterface {
 		} catch (SQLException e) {
 			MatchmakingServer.getLogger().throwing(DBInterface.class.getName(), "queryUser", e);
 			throw new RuntimeException(e);
-		}*/
+		}
 	}
 	
 	public final static Profile[] getProfiles(String username, int revision) {
-		return null;
-		/*
 		try {
 			PreparedStatement stmt = DBUtils.createStatement("SELECT nick, rating, wins, losses, invalid FROM profiles P, registrations R WHERE P.reg_id = R.id AND R.username = ?");
 			try {
@@ -157,12 +147,10 @@ public final strictfp class DBInterface {
 		} catch (SQLException e) {
 			MatchmakingServer.getLogger().throwing(DBInterface.class.getName(), "getProfiles", e);
 			throw new RuntimeException(e);
-		}*/
+		}
 	}
 
 	public final static Profile getProfile(String username, String nick, int revision) {
-		return null;
-		/*
 		try {
 			PreparedStatement stmt = DBUtils.createStatement("SELECT rating, wins, losses, invalid FROM profiles P, registrations R WHERE P.reg_id = R.id AND R.username = ? AND P.nick = ?");
 			try {
@@ -184,11 +172,10 @@ public final strictfp class DBInterface {
 			}
 		} catch (SQLException e) {
 			return null;
-		}*/
+		}
 	}
 
 	public final static void setLastUsedProfile(String username, String nick) {
-		/*
 		try {
 			PreparedStatement stmt = DBUtils.createStatement("UPDATE registrations R SET last_used_profile = ? WHERE R.username = ?");
 			try {
@@ -202,11 +189,10 @@ public final strictfp class DBInterface {
 		} catch (SQLException e) {
 			MatchmakingServer.getLogger().throwing(DBInterface.class.getName(), "setLastUsedProfile", e);
 			throw new RuntimeException(e);
-		}*/
+		}
 	}
 	
 	public final static String getLastUsedProfile(String username) {
-		/*
 		try {
 			PreparedStatement stmt = DBUtils.createStatement("SELECT last_used_profile FROM registrations R WHERE R.username = ?");
 			try {
@@ -225,13 +211,11 @@ public final strictfp class DBInterface {
 		} catch (SQLException e) {
 			MatchmakingServer.getLogger().throwing(DBInterface.class.getName(), "getLastUsedProfile", e);
 			throw new RuntimeException(e);
-		}*/
+		}
 	}
 
 		
 	private final static int getRegID(String username) {
-		return 0;
-		/*
 		try {
 			PreparedStatement stmt = DBUtils.createStatement("SELECT id FROM registrations R WHERE R.username = ?");
 			try {
@@ -249,12 +233,10 @@ public final strictfp class DBInterface {
 		} catch (SQLException e) {
 			MatchmakingServer.getLogger().throwing(DBInterface.class.getName(), "private getRegID", e);
 			throw new RuntimeException(e);
-		}*/
+		}
 	}
 	
 	public final static boolean nickExists(String nick) {
-		return false;
-		/*
 		try {
 			PreparedStatement stmt = DBUtils.createStatement("SELECT nick FROM profiles P WHERE lower(P.nick) = lower(?)");
 			try {
@@ -272,11 +254,10 @@ public final strictfp class DBInterface {
 		} catch (SQLException e) {
 			MatchmakingServer.getLogger().throwing(DBInterface.class.getName(), "queryUser", e);
 			throw new RuntimeException(e);
-		}*/
+		}
 	}
 
 	public final static void saveGameReport(int game_id, int tick, int[] team_score) {
-		/*
 		try {
 			PreparedStatement stmt = DBUtils.createStatement("INSERT INTO game_reports (game_id, tick, team1, team2, team3, team4, team5, team6) " + 
 					"VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
@@ -298,7 +279,6 @@ public final strictfp class DBInterface {
 			MatchmakingServer.getLogger().throwing(DBInterface.class.getName(), "createProfile", e);
 			throw new RuntimeException(e);
 		}
-		*/
 	}
 	
 	public final static void logPriority(int game_id, String nick1, String nick2, int priority) {
